@@ -1,0 +1,14 @@
+transition-length = 40
+transition-pow-x = 0.5
+transition-pow-y = 0.5
+transition-pow-w = 1
+transition-pow-h = 1
+
+spawn-center-screen = true
+size-transition = true
+
+frame-opacity = 0.7;
+
+border-radius = 12;
+
+backend = "glx";

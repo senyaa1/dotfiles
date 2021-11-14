@@ -1,0 +1,7 @@
+#!/bin/bash
+
+export wallpaper=$(sxiv -q -t -r -o $HOME/wlprs/*)
+ln -sf $wallpaper $HOME/wlprs/current_wallpaper
+# xwallpaper --stretch $HOME/wlprs/current_wallpaper
+wal -i $HOME/wlprs/current_wallpaper
+pkill dwm

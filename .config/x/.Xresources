@@ -1,0 +1,20 @@
+!Themes
+!#include "gruvbox-dark.xresources"
+!#include "nord.xresources"
+
+Xft.dpi: 192
+
+*.normbgcolor: background
+*.normfgcolor: foreground
+*.normbordercolor: color0
+*.selbgcolor: color8
+*.selfgcolor: foreground
+*.selbordercolor: color8
+
+dwm.borderpx: 1
+dwm.snap: 32
+
+dwm.mfact: 0.52
+dwm.nmaster: 1
+
+dmenu.font: "Liberation Mono:size=12:antialias=true"
