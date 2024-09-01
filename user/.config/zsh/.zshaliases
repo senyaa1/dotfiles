@@ -31,3 +31,5 @@ alias n='nvim'
 
 alias zed="zeditor"
 alias q="exit"
+
+alias yay="paru"

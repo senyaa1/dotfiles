@@ -1,3 +1,18 @@
+hyprland
+polkit-kde-agent
+swww
+waybar
+dunst
+grim
+slurp
+qt5-wayland
+qt6-wayland
+xdg-desktop-portal-hyprland
+xdg-desktop-portal-lxqt
+
+
+
+
 neovim
 lsd
 bat
@@ -31,6 +46,13 @@ libreoffice-fresh
 gimp
 inkscape
 zed
+
+zathura
+imv
+mpv
+flac
+ffmpeg
+obs-studio
 
 reaper
 yabridge
