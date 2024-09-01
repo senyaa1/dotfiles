@@ -56,6 +56,7 @@ ZVM_VI_HIGHLIGHT_FOREGROUND=#24283b
 ZVM_VI_HIGHLIGHT_BACKGROUND=#a9b1d6
 ZVM_VI_HIGHLIGHT_EXTRASTYLE=bold
 
+
 # completions
 autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -70,6 +71,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#565f89"
 # syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS+=(main brackets pattern cursor)
+ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 

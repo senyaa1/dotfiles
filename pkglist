@@ -1,5 +1,7 @@
 stow
 
+reflector
+
 git
 neovim
 
@@ -50,7 +52,11 @@ libvirt
 
 binutils
 binocle
+imhex
 binwalk
 python-pwntools
 python-pycryptodome
+
+netcat
+nmap
 
