@@ -6,39 +6,7 @@ fi
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # aliases
-alias ls='lsd -lh'
-alias la='lsd -lah'
-alias l='lsd -h'
-
-alias cat='bat'
-
-alias gs='git status'
-alias ga='git add'
-alias gc='git commit'
-alias gb='git branch'
-alias gpush='git pull'
-alias gpull='git pull'
-
-alias grep='grep --color=auto'
-alias btop='btop --utf-force'
-
-alias smci="sudo make clean install"
-
-alias py='python3'
-alias py3='python3'
-alias py2='python2'
-
-alias b='btop --utf-force'
-alias news="newsboat"
-
-alias nv='nvim'
-alias vi='nvim'
-alias v='nvim'
-alias vim='nvim'
-alias n='nvim'
-
-alias zed="zeditor"
-alias q="exit"
+source $ZDOTDIR/.zshaliases
 
 # cd/zoxide
 setopt autocd
