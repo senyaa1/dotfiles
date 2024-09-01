@@ -3,6 +3,11 @@ stow
 git
 neovim
 
+lsd
+bat
+btop
+newsboat
+
 ripdrag-git
 ranger
 
@@ -28,11 +33,13 @@ element-desktop
 vesktop-bin
 
 kicad
-reaper
 libreoffice-fresh
 gimp
 inkscape
 zed
+
+reaper
+yabridge
 
 qbittorrent
 

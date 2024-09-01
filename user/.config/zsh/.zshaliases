@@ -1,6 +1,9 @@
-alias ls='lsd -lh'
-alias la='lsd -lah'
+alias ls='lsd'
 alias l='lsd -h'
+alias l='ls -l'
+alias la='ls -la'
+alias lla='ls -la'
+alias lt='ls --tree'
 
 alias cat='bat'
 
