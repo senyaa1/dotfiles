@@ -12,5 +12,11 @@ rm -f /tmp/CaskaydiaCove.zip
 
 sudo fc-cache -v
 
-# Install configs
+# Install and apply configs
 stow --target=$HOME user/
+
+echo "Merging XRDB"
+xrdb -merge ~/.config/x/.Xresources
+
+sudo chsh --shell /bin/dash root
+chsh --shell /bin/dash 
