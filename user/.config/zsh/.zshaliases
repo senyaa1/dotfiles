@@ -10,6 +10,7 @@ alias cat='bat'
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
+alias gp='git push'
 
 alias grep='grep --color=auto'
 alias btop='btop --utf-force'
