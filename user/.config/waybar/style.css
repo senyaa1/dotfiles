@@ -1,0 +1,46 @@
+@import 'mocha.css';
+
+* {
+  color: @text;
+}
+
+window#waybar {
+    background-color: rgba(0,0,0,.3);
+}
+
+#custom-separator {
+  color: @pink;
+  margin: 0 1px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+}
+
+#workspaces button.focused {
+    background-color: @lavender;
+    color: @crust;
+    border-bottom: 3px solid white;
+}
+
+#workspaces button.active {
+    color: @lavender;
+    border-bottom: 1px solid white;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    background: #f53c3c;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
