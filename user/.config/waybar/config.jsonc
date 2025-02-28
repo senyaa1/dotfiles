@@ -1,136 +1,82 @@
 {
-    "output": [
-        "DP-4",
-        "HDMI-A-3"
-    ],
-    // "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 15, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 8, // Gaps between modules (4px)
-    // Choose the order of the modules
+    // "output": [
+    //     "eDP-1"
+    // ],
+    "layer": "top",
+    // Using margin-bottom with a negative value in order to reduce the space between Hyprland window and waybar
+    "margin-top": 5,
     "modules-left": [
-        "hyprland/workspaces",
+        "hyprland/workspaces"
     ],
     "modules-center": [
-        "mpd"
+        "clock"
     ],
     "modules-right": [
-        "network#1",
-        "custom/separator",
-        "network#2",
-        "custom/separator",
         "cpu",
-        "custom/separator",
         "memory",
-        "custom/separator",
+        "network",
+        "battery",
         "pulseaudio",
-        "custom/separator",
         "hyprland/language",
-        "custom/separator",
-        "clock",
-        "custom/separator",
         "tray"
     ],
-    "custom/separator": {
-        "format": " ",
-        "interval": "once",
-        "tooltip": false
-    },
-    "hyprland/workspaces": {
-        // Always show all workspaces
-        //"persistent-workspaces": {
-        //},
-    },
     "hyprland/language": {
         "format": "{short}"
     },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
+    "hyprland/workspaces": {
+        // "persistent-workspaces": {
+        //     "eDP-1": [
+        //         1,
+        //         2,
+        //         3,
+        //         4,
+        //         5,
+        //         6,
+        //         7,
+        //         8,
+        //         9
+        //     ]
+        // },
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
+    "pulseaudio": {
+        "tooltip": false,
+        "scroll-step": 5,
+        "format": "{icon}  {volume}%",
+        "format-muted": "{icon}  {volume}%",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "default": [
+                "",
+                "",
+                ""
+            ]
         }
     },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
-    "clock": {
-        "format": "{:%Y.%m.%d %H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
-    },
-    "cpu": {
-        "format": "cpu: {usage}%",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "ram: {}%"
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "temp: {temperatureC}°C",
-        "format-icons": [
-            "",
-            "",
-            ""
-        ]
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname}: (No IP)",
+        "format-disconnected": "{ifname}: N/C",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "backlight": {
-        // "device": "acpi_video1",
-        "format": "bl: {percent}%",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
+        "tooltip": false,
+        "format": " {}%",
+        "interval": 1,
+        "on-scroll-up": "light -A 5",
+        "on-scroll-down": "light -U 5"
     },
     "battery": {
         "states": {
-            "warning": 25,
-            "critical": 10
+            "good": 95,
+            "warning": 30,
+            "critical": 20
         },
-        "format": "bat: {capacity}%",
-        "format-full": "bat: {capacity}%",
-        "format-charging": "bat: {capacity}% c",
-        "format-plugged": "bat: {capacity}% p",
-        "format-alt": "bat: {time}",
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
         "format-icons": [
             "",
             "",
@@ -139,57 +85,32 @@
             ""
         ]
     },
-    "network#1": {
-        "interface": "eno2",
-        "format-wifi": "{essid}: {signalStrength}%",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
-        "tooltip-format": "{ifname} via {gwaddr}",
-        "format-linked": "{ifname}: (No IP)",
-        "format-disconnected": "{ifname}: N/C",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
     },
-    "network#2": {
-        "interface": "br0",
-        "format-wifi": "{essid}: {signalStrength}%",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
-        "tooltip-format": "{ifname} via {gwaddr}",
-        "format-linked": "{ifname}: (No IP)",
-        "format-disconnected": "{ifname}: N/C",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "clock": {
+        "format": "{:%Y.%m.%d %H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
     },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "vol: {volume}% {format_source}",
-        "format-bluetooth": "vol (): {volume}% {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "vol: muted {format_source}",
-        "format-source": "     mic: {volume}%",
-        "format-source-muted": "mic: muted",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
-        },
-        "on-click": "pavucontrol"
+    "cpu": {
+        "interval": 10,
+        "format": "  {}%",
+        "max-length": 10
     },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    "memory": {
+        "interval": 10,
+        "format": "  {}%",
+        "max-length": 10
+    },
+    "hyprland/language": {
+        "format": "󰌌  {short}"
+    },
+    "hyrpland/workspaces": {
+        "format": "{icon}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "on-click": "activate"
     }
 }
