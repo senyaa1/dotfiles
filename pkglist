@@ -1,7 +1,3 @@
-greetd 
-tuigreet
-
-hyprland
 polkit-kde-agent
 swww
 waybar
@@ -12,7 +8,6 @@ slurp
 qt5-wayland
 qt6-wayland
 xdg-desktop-portal-hyprland
-xdg-desktop-portal-lxqt
 
 neovim
 lsd
@@ -22,6 +17,7 @@ newsboat
 ripdrag-git
 ranger
 
+kitty
 alacritty
 dash
 zsh
@@ -33,14 +29,12 @@ fzf-tab-git
 zsh-history-substring-search
 zoxide
 
-librewolf-bin
-feishin-bin
+zen-browser-bin
 obsidian
 keepassxc
 
 telegram-desktop
-element-desktop
-vesktop-bin
+gajim
 
 kicad
 libreoffice-fresh
@@ -54,9 +48,6 @@ mpv
 flac
 ffmpeg
 obs-studio
-
-reaper
-yabridge
 
 qbittorrent
 
@@ -75,3 +66,4 @@ python-pycryptodome
 netcat
 nmap
 
+xournalpp
